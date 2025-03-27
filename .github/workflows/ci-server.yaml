@@ -24,7 +24,7 @@ permissions:
 
 jobs:
   ci:
-    uses: ./.github/workflows/export-go-server-ci.yaml
+    uses: curioswitch/go-curiostack/.github/workflows/export-go-server-ci.yaml@a14e03127d8a4a39bd807110a952ad12666489f5
     with:
       project_dir: server
       service: catsearch-server
