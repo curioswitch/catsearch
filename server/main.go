@@ -20,10 +20,10 @@ func main() {
 	os.Exit(server.Main(&config.Config{}, confFiles, setupServer))
 }
 
-func setupServer(ctx context.Context, conf *config.Config, s *server.Server) error {
+func setupServer(ctx context.Context, _ *config.Config, s *server.Server) error {
 	mux := server.Mux(s)
 
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
 		_, _ = w.Write([]byte("I'm a cat!"))
 	})
 
