@@ -23,15 +23,8 @@ permissions:
   id-token: write
 
 jobs:
-  check:
-    uses: ./.github/workflows/_check-go.yaml
-    with:
-      project_dir: server
-    secrets: inherit
-
-  docker:
-    needs: check
-    uses: ./.github/workflows/_docker-go.yaml
+  ci:
+    uses: ./.github/workflows/export-go-server-ci.yaml
     with:
       project_dir: server
       service: catsearch-server
